@@ -1,0 +1,264 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700|Source+Sans+Pro:300,400,700|Open+Sans+Condensed:700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+    font-family: 'Playfair Display';
+    background: #292929;
+    max-width: 1337px;
+}
+
+@media (min-width: 400px) {
+    html,
+    body {
+        padding: 10px;
+    }
+}
+
+body {
+    padding-bottom: 40px;
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+}
+
+/* -- GENERAL -------------------------- */
+
+@media (max-width: 1000px) {
+    .only-large {
+        display: none;
+    }
+}
+
+.desktop-only-message {
+    color: white;
+    padding: 30px 10px;
+}
+
+.desktop-only-message img {
+    max-width: 75%;
+    margin-top: 5px;
+}
+
+/* not a great media query for "desktop only" */
+@media (max-width: 600px), (max-device-width : 736px) {
+    .desktop-only-message {
+        display: block !important;
+    }
+}
+
+/* -- TOP -------------------------- */
+
+#top {
+    height: calc(100vh - 40px);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 399px) {
+    #op {
+        height: 100vh;
+    }
+}
+
+#top canvas {
+    cursor: crosshair;
+    background: black;
+    font-family: 'Playfair Display';
+    font-weight: bold;
+}
+
+#top span {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    letter-spacing: 5px;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#top .hello {
+    display: none;
+}
+
+#top .redraw {
+    bottom: 30px;
+    opacity: 0;
+    background: black;
+    padding: 10px 15px;
+}
+
+/* -- EFFECTS -------------------------- */
+
+.canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.effect-container {
+    height: 550px;
+    position: relative;
+}
+
+@media (max-height: 750px) {
+    .effect-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 850px) {
+    .effect-container {
+        font-size: 0.8em;
+    }
+}
+
+.effect-container .text {
+    position: absolute;
+    z-index: 2; /* above the canvas */
+    pointer-events: none;
+    bottom: 75px;
+    left: 0;
+    right: 0;
+    padding-left: 100px;
+}
+
+.effect-container .text:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    background: currentColor;
+}
+
+.effect-container h1 {
+    font-size: 3em;
+    font-weight: normal;
+    position: relative;
+}
+
+.effect-container h1:before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    width: 40px;
+    height: 2px;
+    top: 60%;
+    background: currentColor;
+}
+
+.effect-container p {
+    line-height: 200%;
+    -webkit-font-smoothing: antialiased;
+    width: 75%;
+}
+
+#ball-pit {
+    background: hsl(48, 100%, 46%);
+    color: white;
+}
+
+#bubbles {
+    background: #444;
+    color: white;
+}
+
+/* Causes issues on Chrome. Bug. :( */
+/*#bubbles .text {*/
+    /*mix-blend-mode: difference;*/
+/*}*/
+
+#brain-failure {
+    background: white;
+}
+
+#river {
+    background: white;
+}
+
+#stripes {
+    background: #FDC900;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#destroy {
+    background: #444;
+    height: 400px;
+}
+
+#destroy .canvas-container {
+    font-family: 'Open Sans Condensed';
+    font-weight: bold;
+}
+
+/* -- FOOTER -------------------------- */
+
+footer {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3em;
+    padding-top: 40px;
+    line-height: 200%;
+}
+
+footer,
+footer a {
+    color: #F5F5F5;
+}
+
+footer i {
+    display: inline-block;
+}
+
+footer a {
+    text-decoration: none;
+    position: relative;
+    font-size: 0.8em;
+    margin: 0 15px 0 35px;
+}
+
+footer .fa {
+    margin-right: 8px;
+    font-size: 0.9em;
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    transform: translateY(-50%);
+}
+
+footer .fa.fa-envelope-o {
+    margin-left: -2px;
+}
+
+/* underline hover effect */
+
+footer a:after {
+    content: '';
+    height: 2px;
+    background: currentColor;
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -2px;
+    transition: all .3s cubic-bezier(.615, .19, .305, .91);
+}
+
+footer a:hover:after {
+    right: 0;
+}

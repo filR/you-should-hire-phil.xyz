@@ -1,0 +1,17 @@
+{
+  "name": "hire-phil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bezier-easing": "^1.1.1",
+    "css-loader": "^0.19.0",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2"
+  }
+}
