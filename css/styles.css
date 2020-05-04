@@ -56,7 +56,7 @@ body {
 /* -- TOP -------------------------- */
 
 #top {
-    height: calc(100vh - 40px);
+    height: calc(95vh - 40px);
     position: relative;
     margin-bottom: 20px;
 }
